@@ -1,0 +1,9 @@
+El árbol AVL toma su nombre de las iniciales de los apellidos de sus inventores,
+Georgii Adelson-Velskii y Yevgeniy Landis.
+
+
+Los árboles AVL están siempre equilibrados de tal modo que para todos los nodos,
+la altura de la rama izquierda no difiere en más de una unidad de la altura de la rama derecha o viceversa.
+Gracias a esta forma de equilibrio (o balanceo), la complejidad de una búsqueda en uno de estos árboles
+se mantiene siempre en orden de complejidad O(log n).
+

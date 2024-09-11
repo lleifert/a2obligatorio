@@ -7,7 +7,7 @@ using namespace std;
 class Libro
 {
     private:
-        int id;         // Numero de identificacion unico
+        int id;         // numero de identificacion unico
         string titulo;  // titulo
         bool estado;    // true (habilitado), false (deshabilitado)
         
