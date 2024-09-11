@@ -182,6 +182,19 @@ private:
         }
     }
 
+    T get(AVLNode *node, T element)
+    {
+        if(comparacion(node->element, element) == 0 ) {
+            return node->element;
+        }
+        else if(comparacion(node->element, element) > 0) {
+            return get(node->left, element);
+        }
+        else {
+            return get(node->right, element);
+        }
+    }
+
 public:
     //AVL() : root(NULL) {}
 
@@ -213,6 +226,11 @@ public:
     void imprimir()
     {
         this->imprimirInOrder(root);
+    }
+
+    T get(T element)
+    {
+        return this->get(root, element);
     }
 };
 

@@ -56,7 +56,7 @@ int main()
     cout << "Existe el libro 1 en la biblioteca?" << endl;
     if (biblioteca->contains(l1))
     {
-      cout << "Existe el libro l1" << endl;
+      cout << "Existe el libro l1, Titulo: " << biblioteca->get(l1).getTitulo() << endl;
     }
     else
     {
