@@ -228,7 +228,7 @@ public:
         this->imprimirInOrder(root);
     }
 
-    T get(T element)
+    T get(T* element)
     {
         return this->get(root, element);
     }
