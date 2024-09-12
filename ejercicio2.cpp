@@ -49,7 +49,7 @@ int main()
      */
     int N;                           // N es la cantidad de comandos a ejecutar, viene en la primera linea
     string comando;                  // linea con el comando y atributos a ejectuar
-    string id_libro;
+    int id_libro;
     string titulo_libro;
 
     // Creo la biblioteca como un puntero a una estructura de datos del tipo Tabla de Hash Cerrado.
@@ -80,7 +80,7 @@ int main()
             cout << "Creo Libro 1" << endl;
             Libro l1(id_libro, titulo_libro, true);
             cout << "Inserto Libro 1" << endl;
-            biblioteca->insert(l1); 
+            //biblioteca->insert(l1); 
         }
         else if ( comando == "FIND")
         {
