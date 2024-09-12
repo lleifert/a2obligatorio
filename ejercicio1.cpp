@@ -93,7 +93,6 @@ int main()
             {
                 // si existe entonces imprimo el titulo y si esta habilitado (no esta del todo claro)
                 Libro& x = biblioteca->get(l);
-                //Libro x = biblioteca->get(l);
                 cout << x;
             }
             else
