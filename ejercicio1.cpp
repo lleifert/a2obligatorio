@@ -54,9 +54,20 @@ int main()
             if ( biblioteca->contains(l) )
             {
                 // si existe entonces le modifico el nombre y lo habilito (si esta deshabilitado)
-                Libro x = biblioteca->get(l);
-                x.setTitulo(l.getTitulo());
-                x.setEstado(true);
+                Libro& x = biblioteca->get(l);
+
+                if ( x.getEstado() )
+                {
+                    x.setTitulo(l.getTitulo());
+                }
+                else
+                {
+                    x.setTitulo(l.getTitulo());
+                    x.setEstado(true);
+
+                    total_libros_deshabilitados--;
+                    total_libros_habilitados++;
+                }
             }
             else
             {
@@ -81,7 +92,8 @@ int main()
             if ( biblioteca->contains(l) )
             {
                 // si existe entonces imprimo el titulo y si esta habilitado (no esta del todo claro)
-                Libro x = biblioteca->get(l);
+                Libro& x = biblioteca->get(l);
+                //Libro x = biblioteca->get(l);
                 cout << x;
             }
             else

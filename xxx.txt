@@ -1,6 +1,8 @@
 g++ -std=c++11 -o ejercicio1 ejercicio1.cpp && ejercicio1.exe
 g++ -std=c++11 -o ejercicio1 ejercicio1.cpp && ejercicio1.exe < 11.in.txt
 g++ -std=c++11 -o ejercicio1 ejercicio1.cpp && ejercicio1.exe < 11.in.txt > 11.leo.txt
+g++ -std=c++11 -o ejercicio1 ejercicio1.cpp && ejercicio1.exe < tests\ejercicio1\11.in.txt > tests\ejercicio1\11.leo.txt
+
 
 g++ -std=c++11 -o ejercicio2 ejercicio2.cpp && ejercicio2.exe
 g++ -std=c++11 -o ejercicio2 ejercicio2.cpp && ejercicio2.exe < 11.in.txt
