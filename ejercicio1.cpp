@@ -42,7 +42,12 @@ int main()
         if ( comando == "ADD" )
         {
             /**
-             * Estructura del comando: ADD <ID del libro> <Título del libro>
+             * COMANDO: ADD
+             * ENTRADA: `ADD <ID del libro> <Título del libro>`: para agregar un nuevo libro con su ID y título.
+             *          En caso de que el ID ya exista, se debe actualizar el título del libro y habilitarlo.
+             * SALIDA: Ninguna.
+             * RESTRICCIONES: La estructura de datos debe ser un árbol AVL para asegurar que las operaciones de inserción,
+             *                búsqueda, y actualización de estado se realicen en tiempo $O(\log N)$.
              */
             cin >> id;
             cin >> titulo;
@@ -83,7 +88,15 @@ int main()
         {
             /**
              * Estructura del comando: FIND <ID del libro>
-             */            
+             */  
+            /**
+             * COMANDO: FIND
+             * ENTRADA: `FIND <ID del libro>`: para buscar un libro por su ID.
+             * SALIDA: Para cada operación de búsqueda `FIND`, imprimir el título del libro si existe y está habilitado (`H` o `D`),
+             *         o "libro_no_encontrado" si no existe o está deshabilitado.
+             * RESTRICCIONES: La estructura de datos debe ser un árbol AVL para asegurar que las operaciones de inserción,
+             *                búsqueda, y actualización de estado se realicen en tiempo $O(\log N)$.
+             */                      
             cin >> id;
 
             // creo libro auxiliar a buscar
@@ -104,8 +117,14 @@ int main()
         else if ( comando == "TOGGLE")
         {
             /**
-             * Estructura del comando: TOGGLE <ID del libro>
-             */    
+             * COMANDO: TOGGLE
+             * ENTRADA: `TOGGLE <ID del libro>`: para cambiar el estado de un libro a habilitado si está deshabilitado,
+             *           o a deshabilitado si está habilitado. Si el libro no existe, devolver "libro_no_encontrado".
+             * SALIDA: Para cada operación `TOGGLE`, si el libro no existe, imprimir "libro_no_encontrado".
+             *         Si el libro existe, no imprimir nada.
+             * RESTRICCIONES: La estructura de datos debe ser un árbol AVL para asegurar que las operaciones de inserción,
+             *                búsqueda, y actualización de estado se realicen en tiempo $O(\log N)$.
+             */
             cin >> id;
 
             // creo libro a buscar
@@ -143,13 +162,18 @@ int main()
         else if ( comando == "COUNT")
         {
             /**
-             * Estructura del comando: COUNT
-             */ 
+             * COMANDO: COUNT
+             * ENTRADA: `COUNT`: para consultar la cantidad total de libros, así como la cantidad de libros habilitados y deshabilitados.
+             * SALIDA: Para la operación `COUNT`, imprimir en una sola línea tres enteros:
+             *         el número total de libros, el número de libros habilitados y el número de libros deshabilitados.
+             *         Formato de salida: `{total} {habilitados} {deshabilitados}`.
+             * RESTRICCIONES: La consulta (operación `COUNT`) debe realizarse en tiempo $O(1)_{pc}$.
+             */
             cout << total_libros << " " << total_libros_habilitados << " " << total_libros_deshabilitados << endl;
         }
         else
         {
-            cout << "El comando ingresado no es correcto." << endl;
+            cout << "El comando ingresado no es valido." << endl;
         }
     }
 
