@@ -95,10 +95,8 @@ private:
         /* 1. Perform the normal BST insertion */
         if (node == NULL)
             return new AVLNode(element);
-        //if (element < node->element)
         if ( comparacion(element, node->element) < 0 )
             node->left = insert(node->left, element);
-        //else if (element > node->element)
         else if ( comparacion(element, node->element) > 0 )
             node->right = insert(node->right, element);
         else // Equal elements are not allowed in BST
@@ -122,12 +120,10 @@ private:
             return rightRotate(node);
 
         // Right Right Case
-        //if (balance > 1 && element > node->right->element)
         if (balance > 1 && comparacion(element, node->right->element) > 0)
             return leftRotate(node);
 
         // Left Right Case
-        //if (balance < -1 && element > node->left->element)
         if (balance < -1 && comparacion(element, node->left->element) > 0)
         {
             node->left = leftRotate(node->left);
@@ -135,7 +131,6 @@ private:
         }
 
         // Right Left Case
-        //if (balance > 1 && element < node->right->element)
         if (balance > 1 && comparacion(element, node->right->element) < 0)
         {
             node->right = rightRotate(node->right);
@@ -169,11 +164,9 @@ private:
         if(node == NULL) {
             return false;
         }
-        //if(node->element == element) {
-        if(comparacion(node->element, element) == 0) {  // si el id del libro A menos el id del libro B me dan cero entonces el libro existe
+        if(comparacion(node->element, element) == 0) {
             return true;
         }
-        //else if(node->element > element) {
         else if(comparacion(node->element, element) > 0) {
             return contains(node->left, element);
         }
@@ -182,7 +175,7 @@ private:
         }
     }
 
-    T get(AVLNode *node, T element)
+    T& get(AVLNode *node, T& element)
     {
         if(comparacion(node->element, element) == 0 ) {
             return node->element;
@@ -228,7 +221,7 @@ public:
         this->imprimirInOrder(root);
     }
 
-    T get(T* element)
+    T& get(T& element)
     {
         return this->get(root, element);
     }
